@@ -15,8 +15,8 @@ public partial class EnemyBehavior : MonoBehaviour
     private bool sequentialWaypoints = true;//是否按序
 
     public Transform[] waypoints;//航电
-    public float turnSpeed = 100f; //旋转速度（度/秒）
-    public float waypointThreshold = 10.0f; //距离阈值
+    public float turnSpeed = 300f; //旋转速度（度/秒）
+    public float waypointThreshold = 25.0f; //距离阈值
     
 
     private void Start()
