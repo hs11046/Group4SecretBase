@@ -150,5 +150,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  turnSpeed: 300
+  turnSpeed: 540
   waypointThreshold: 25

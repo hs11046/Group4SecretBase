@@ -18,7 +18,7 @@ public partial class EnemyBehavior : MonoBehaviour {
     private bool sequentialWaypoints = true;//是否按序
 
     public Transform[] waypoints;//航电
-    public float turnSpeed = 300f; //旋转速度（度/秒）
+    public float turnSpeed = 540f; //旋转速度（度/秒）
     public float waypointThreshold = 25.0f; //距离阈值
     #region Trigger into chase or die
     
@@ -100,7 +100,7 @@ public partial class EnemyBehavior : MonoBehaviour {
     private void TurnTowardsWaypoint(Transform targetWaypoint)
     {
         Vector3 direction = targetWaypoint.position - transform.position;
-        float rotationStep = turnSpeed * Time.deltaTime;
+        float rotationStep = Mathf.Min(turnSpeed * Time.deltaTime, Vector3.Angle(transform.up, direction) * Mathf.Deg2Rad);
         Vector3 newUp = Vector3.RotateTowards(transform.up, direction, rotationStep * Mathf.Deg2Rad, 0.0f);
         transform.up = newUp;
     }
